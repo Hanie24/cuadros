@@ -1,0 +1,33 @@
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.square {
+    width: 20%;
+    padding-top: 20%;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.blue {
+    background-color: #0033FF;
+}
+
+.red {
+    background-color: #CC0000;
+}
+
+.green {
+    background-color: #009900;
+}
+
+.pink { 
+    background-color: #ff689d; 
+    color: #fff; 
+    font-weight:bold; 
+}
+
+            
+
+            
