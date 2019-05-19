@@ -1,14 +1,24 @@
-let elements = document.getElementsByClassName("square");
-    
-for(let i = 0; i < elements.length; i++) {
-    elements[i].onclick = function() {
-        var element = elements[0];
-        while(element) {
-            if(element.tagName === "div") {
-                element.classList.remove("pink");  
-                }
-                element = element.nextSibling;
+(function(){
+    let html = "";
+    let boxes = [1,2,3];
+    boxes.map(function(item){
+        html +=`<div class="square">${item}</div>`;
+    });
+    $("#Container_Boxes").html(html);
+
+    $(document).on('click', '.square', function clickOnIt(e){
+        if(!$(e.target).hasClass('callToAction')){
+            $(e.target).css('background', 'pink').addClass('callToAction');
+        }else {
+            $(e.target).hide();
         }
-        this.classList.add("pink");  
-    };
-}
+    });
+
+    let count = 3;
+    $('#Button').on('click', function(){
+        count++;
+        boxes.push(count);
+        $("#Container_Boxes").append(`<div class="square">${count}</div>`);
+    });
+
+})();
